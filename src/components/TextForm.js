@@ -41,6 +41,17 @@ export default function TextForm(props) {
     props.showAlert("Extra spaces removed!", "success");
   };
 
+  const findTextLength = (text) => {
+    let words = text.split(" ");
+    let count = 0;
+    for (const word of words) {
+      if (word.length !== 0) {
+        count++;
+      }
+    }
+    return count;
+  };
+
   return (
     <>
       <div
@@ -87,7 +98,7 @@ export default function TextForm(props) {
       >
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} charachters
+          {text ? findTextLength(text) : 0} words and {text.length} charachters
         </p>
         <p>{text.split(" ").length * 0.008} Minutes read</p>
         <h2>Preview</h2>
