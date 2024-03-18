@@ -29,9 +29,7 @@ export default function TextForm(props) {
   };
 
   const handleCopyClick = () => {
-    let text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to clipboard!", "success");
   };
 
@@ -42,7 +40,7 @@ export default function TextForm(props) {
   };
 
   const findTextLength = (text) => {
-    let words = text.split(" ");
+    let words = text.split(/\s+/);
     let count = 0;
     for (const word of words) {
       if (word.length !== 0) {
