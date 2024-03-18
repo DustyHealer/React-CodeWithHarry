@@ -60,7 +60,7 @@ export default function TextForm(props) {
           color: props.mode === "light" ? "#042743" : "white",
         }}
       >
-        <h1>{props.heading}</h1>
+        <h1 className="mb-2">{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -74,22 +74,36 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2 my-2"
+          onClick={handleUpClick}
+        >
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2 my-2"
+          onClick={handleLoClick}
+        >
           Convert to LowerCase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-2 my-2"
           onClick={handleClearClick}
         >
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleCopyClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-2 my-2"
+          onClick={handleCopyClick}
+        >
           Copy Text
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-2 my-2"
           onClick={handleExtraSpaces}
         >
