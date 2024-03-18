@@ -74,19 +74,25 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+        <button
+          className="btn btn-primary mx-2 my-2"
+          onClick={handleClearClick}
+        >
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopyClick}>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleCopyClick}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
+        <button
+          className="btn btn-primary mx-2 my-2"
+          onClick={handleExtraSpaces}
+        >
           Remove Extra Spaces
         </button>
       </div>
@@ -100,7 +106,7 @@ export default function TextForm(props) {
         <p>
           {text ? findTextLength(text) : 0} words and {text.length} charachters
         </p>
-        <p>{text.split(" ").length * 0.008} Minutes read</p>
+        <p>{findTextLength(text) * 0.008} Minutes read</p>
         <h2>Preview</h2>
         <p>{text ? text : "Enter something to preview it here"}</p>
       </div>

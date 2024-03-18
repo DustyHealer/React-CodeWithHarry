@@ -1,29 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-    border: "1px solid white",
-  });
+export default function About(props) {
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "black",
+  //   backgroundColor: "white",
+  //   border: "1px solid white",
+  // });
 
-  const [btnText, setBtnText] = useState("Enable Dark Mode");
-  const toggleStyle = () => {
-    if (myStyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnText("Enable Light Mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-        border: "1px solid white",
-      });
-      setBtnText("Enable Dark Mode");
-    }
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#042069",
+    backgroundColor: props.mode === "dark" ? "#042069" : "white",
+    border: "2 px solid",
+    borderColor: props.mode === "dark" ? "white" : "#042069",
   };
+
+  // const [btnText, setBtnText] = useState("Enable Dark Mode");
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "black") {
+  //     setMyStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //     });
+  //     setBtnText("Enable Light Mode");
+  //   } else {
+  //     setMyStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //       border: "1px solid white",
+  //     });
+  //     setBtnText("Enable Dark Mode");
+  //   }
+  // };
 
   return (
     <div className="container" style={myStyle}>
@@ -123,11 +130,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button type="button" className="btn btn-primary" onClick={toggleStyle}>
           {btnText}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

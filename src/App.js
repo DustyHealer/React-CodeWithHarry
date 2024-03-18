@@ -4,7 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // Whether dark mode is enabled or not
@@ -54,7 +54,7 @@ function App() {
                 />
               }
             />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About mode={mode} />} />
             {/* <Route path="/about">
               <About />
             </Route>
